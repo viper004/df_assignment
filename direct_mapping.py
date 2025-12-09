@@ -8,7 +8,9 @@ def print_cache(cache):
 
 
 def main():
-    print("=== Direct Mapping Cache Simulation ===")
+    print("\n=== Direct Mapping Cache Simulation ===")
+    print("----------------------------------------")
+
 
     # Step 1: Input cache size
     cache_size = int(input("Enter number of cache lines: "))

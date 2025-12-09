@@ -1,4 +1,5 @@
 # Direct Mapping Cache Simulation
+
 def print_cache(cache):
     print("\nCurrent Cache State:")
     for i, line in enumerate(cache):

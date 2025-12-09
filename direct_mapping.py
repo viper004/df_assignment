@@ -22,13 +22,13 @@ def main():
         if block == -1:
             print("Exiting simulation...")
             break
-
+        # Calculate cache line using modulo
         # Step 3: Direct mapping
         line = block % cache_size
 
         print(f"\nBlock Number: {block}")
         print(f"Mapped Cache Line: {line}")
-
+        # Check if block already in cache (hit)
         # Step 4: Hit/Miss check
         if cache[line]["tag"] == block:
             print("Status: CACHE HIT ✔")

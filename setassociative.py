@@ -1,41 +1,58 @@
 def set_associative_mapping(blocks, cache_size, associativity):
-    # Number of sets = total cache lines / associativity (ways per set)
+    # Number of sets = total cache lines / associativity
     num_sets = cache_size // associativity
 
-    # Initialize cache: a list of sets, each set has 'associativity' slots initialized to None
+    # Initialize cache: list of sets, each with 'associativity' slots
     sets = [[None] * associativity for _ in range(num_sets)]
 
-    print(f"Set-Associative Mapping ({associativity}-way) (no replacement)")
+    print(f"\nSet-Associative Mapping ({associativity}-way) (no replacement)")
     print("Block\tSetIdx\tSetContents\t\tStatus")
-    print("-" * 50)
+    print("-" * 60)
 
-    # Process each block in the reference string
+    hits = 0
+    misses = 0
+
     for block in blocks:
-        # Find which set the block maps to
         set_idx = block % num_sets
-
-        # Access the selected set
         current_set = sets[set_idx]
 
-        # Check if block already exists in the set → HIT
         if block in current_set:
             status = "Hit"
-
-        else:  # MISS case
-            # If there is an empty slot (None), place the block there
+            hits += 1
+        else:
+            misses += 1
             if None in current_set:
                 empty = current_set.index(None)
                 current_set[empty] = block
                 status = "Miss (placed)"
-
             else:
-                # Set is full and we are not doing replacement → block not inserted
                 status = "Miss (set full, not placed)"
 
-        # Print the result for this block access
         print(f"{block}\t{set_idx}\t{current_set}\t{status}")
 
+    total = hits + misses
+    hit_ratio = hits / total if total > 0 else 0
 
-# Example usage
-blocks = [0, 1, 2, 3, 4, 0, 2]
-set_associative_mapping(blocks, cache_size=4, associativity=2)
+    print("\nSummary:")
+    print(f"Total Accesses: {total}")
+    print(f"Hits: {hits}")
+    print(f"Misses: {misses}")
+    print(f"Hit Ratio: {hit_ratio:.2%}")
+
+
+# ---------------------------
+# USER INPUT SECTION
+# ---------------------------
+
+# Input memory block sequence
+blocks_input = input("Enter block sequence (comma-separated): ")
+blocks = [int(x.strip()) for x in blocks_input.split(",")]
+
+# Input cache size
+cache_size = int(input("Enter cache size (number of lines): "))
+
+# Input associativity value
+associativity = int(input("Enter associativity (ways): "))
+
+# Run the mapping function
+set_associative_mapping(blocks, cache_size, associativity)

@@ -1,0 +1,41 @@
+ALGORITHM
+
+Step 1: Begin the program.
+
+Step 2: Accept the sequence of memory block references from the user.
+
+Step 3: Read the total number of cache lines.
+
+Step 4: Read the associativity value(ways).
+
+Step 5: Compute the number of cache sets using:
+	number_of_sets = cache_size / ways
+
+Step 6: Initialize the cache as a collection of sets, where each set contains ways empty slots.
+
+Step 7: Initialize hit counter and miss counter to zero.
+
+Step 8: For each memory block in the given sequence, perform the following operations:
+
+Step 9: Determine the target set index using:
+	set_index = block_number mod number_of_sets
+
+Step 10: Check whether the block is already present in the selected set.
+	 If present, count it as a cache hit and increment the hit counter.
+
+Step 11: If the block is not found in the set, count it as a cache miss and increment the miss counter.
+
+Step 12: If an empty slot exists in the set, place the block in that slot.
+
+Step 13: If the set is full, do not replace any existing block and leave the cache unchanged.
+
+Step 14: Display the block number, corresponding set index, current set contents, and access status after each reference.
+
+Step 15: After all block references are processed, compute:
+	 total_accesses = hits + misses
+	 hit_ratio = hits / total_accesses
+
+Step 16: Display the final summary including total accesses, number of hits, number of misses, and hit ratio.
+
+Step 17: End the program.
+

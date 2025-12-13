@@ -1,0 +1,120 @@
+Step 1: Start
+
+       Begin the program.
+
+Step 2: Initialize Cache Parameters
+
+        Number of cache lines (num_lines)
+
+Mapping technique (direct, associative, or set-associative)
+
+Associativity for set-associative mapping
+
+Replacement policy (FIFO, LRU, or LFU)
+
+Sequence of memory block references
+
+Step 3: Create Cache Structure
+
+       Divide the cache into sets based on the mapping technique:
+
+Direct Mapping → Each block maps to one cache line.
+
+Associative Mapping → One set containing all cache lines.
+
+Set-Associative Mapping → Cache divided into multiple sets, each with assoc lines.
+
+Initialize each cache line with:
+
+Block value = NULL
+
+Insert time = 0
+
+Last used time = 0
+
+Frequency count = 0
+
+Initialize counters:
+
+hits = 0
+
+misses = 0
+
+time_counter = 0
+
+Step 4: Process Each Memory Block Reference
+
+
+Step 5: Determine Cache Set
+
+Calculate the set index using:
+
+set_index = block % number_of_sets
+
+For associative mapping, always select set 0.
+
+Step 6: Search Block in Cache Set
+
+Scan all cache lines in the selected set:
+
+If the block is found → HIT
+
+If the block is not found → MISS
+
+Step 7: On Cache Hit
+
+If a HIT occurs:
+
+Increment the hit counter.
+
+Update:
+
+last_used time of the cache line.
+
+Frequency count (freq) of the cache line.
+
+Display cache state after the hit.
+
+Step 8: On Cache Miss
+
+If a MISS occurs:
+
+Increment the miss counter.
+
+Check for an empty cache line in the set.
+
+If an empty line exists, select it.
+
+Otherwise, select a victim line using the selected replacement policy:
+
+FIFO: Replace the block that entered the cache first.
+
+LRU: Replace the least recently used block.
+
+LFU: Replace the least frequently used block (tie broken by oldest entry).
+
+Replace the victim line with the new block.
+
+Update insertion time, last used time, and frequency.
+
+Display cache state after the miss.
+
+Step 9: Repeat
+
+Repeat Steps 6 to 8 for all memory block references.
+
+Step 10: Display Results
+
+After processing all references:
+
+Display total number of cache hits.
+
+Display total number of cache misses.
+
+Calculate hit ratio using:
+
+hit_ratio = hits / (hits + misses)
+
+Step 11: Stop
+
+         End the program.

@@ -1,0 +1,122 @@
+=== Direct Mapping Cache Simulation ===
+----------------------------------------
+Enter number of cache lines: 4
+
+Enter block number (-1 to exit): 4
+
+Block Number: 4
+Mapped Cache Line: 0
+Status: CACHE MISS
+Loading block 4 into line 0...
+
+Current Cache State:
+Line 0: Tag = 4
+Line 1: Tag = None
+Line 2: Tag = None
+Line 3: Tag = None
+----------------------------------------
+
+Enter block number (-1 to exit): 5
+
+Block Number: 5
+Mapped Cache Line: 1
+Status: CACHE MISS
+Loading block 5 into line 1...
+
+Current Cache State:
+Line 0: Tag = 4
+Line 1: Tag = 5
+Line 2: Tag = None
+Line 3: Tag = None
+----------------------------------------
+
+Enter block number (-1 to exit): 6
+
+Block Number: 6
+Mapped Cache Line: 2
+Status: CACHE MISS
+Loading block 6 into line 2...
+
+Current Cache State:
+Line 0: Tag = 4
+Line 1: Tag = 5
+Line 2: Tag = 6
+Line 3: Tag = None
+----------------------------------------
+
+Enter block number (-1 to exit): 7
+
+Block Number: 7
+Mapped Cache Line: 3
+Status: CACHE MISS
+Loading block 7 into line 3...
+
+Current Cache State:
+Line 0: Tag = 4
+Line 1: Tag = 5
+Line 2: Tag = 6
+Line 3: Tag = 7
+----------------------------------------
+
+Enter block number (-1 to exit): 4
+
+Block Number: 4
+Mapped Cache Line: 0
+Status: CACHE HIT
+
+Current Cache State:
+Line 0: Tag = 4
+Line 1: Tag = 5
+Line 2: Tag = 6
+Line 3: Tag = 7
+----------------------------------------
+
+Enter block number (-1 to exit): 5
+
+Block Number: 5
+Mapped Cache Line: 1
+Status: CACHE HIT
+
+Current Cache State:
+Line 0: Tag = 4
+Line 1: Tag = 5
+Line 2: Tag = 6
+Line 3: Tag = 7
+----------------------------------------
+
+Enter block number (-1 to exit): 8
+
+Block Number: 8
+Mapped Cache Line: 0
+Status: CACHE MISS
+Loading block 8 into line 0...
+
+Current Cache State:
+Line 0: Tag = 8
+Line 1: Tag = 5
+Line 2: Tag = 6
+Line 3: Tag = 7
+----------------------------------------
+
+Enter block number (-1 to exit): 9
+
+Block Number: 9
+Mapped Cache Line: 1
+Status: CACHE MISS
+Loading block 9 into line 1...
+
+Current Cache State:
+Line 0: Tag = 8
+Line 1: Tag = 9
+Line 2: Tag = 6
+Line 3: Tag = 7
+----------------------------------------
+
+Enter block number (-1 to exit): -1
+Exiting simulation...
+
+=== Simulation Summary ===
+Total References: 8
+Total Hits: 2
+Total Misses: 6
+Hit Ratio: 0.25

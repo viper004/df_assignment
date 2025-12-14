@@ -1,0 +1,20 @@
+Enter block sequence (comma-separated): 0,1,2,3,4,6,1
+Enter cache size (number of lines): 4
+Enter associativity (ways): 2
+
+Set-Associative Mapping (2-way)
+Block   SetIdx  SetContents             Status
+------------------------------------------------------------
+0       0       [0, None]       Miss (placed)
+1       1       [1, None]       Miss (placed)
+2       0       [0, 2]  Miss (placed)
+3       1       [1, 3]  Miss (placed)
+4       0       [0, 2]  Miss (set full, not placed)
+6       0       [0, 2]  Miss (set full, not placed)
+1       1       [1, 3]  Hit
+
+Summary:
+Total Accesses: 7
+Hits: 1
+Misses: 6
+Hit Ratio: 14.29%

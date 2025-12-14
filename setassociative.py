@@ -5,7 +5,7 @@ def set_associative_mapping(blocks, cache_size, associativity):
     # Initialize cache: list of sets, each with 'associativity' slots
     sets = [[None] * associativity for _ in range(num_sets)]
 
-    print(f"\nSet-Associative Mapping ({associativity}-way) (no replacement)")
+    print(f"\nSet-Associative Mapping ({associativity}-way)")
     print("Block\tSetIdx\tSetContents\t\tStatus")
     print("-" * 60)
 
@@ -39,10 +39,6 @@ def set_associative_mapping(blocks, cache_size, associativity):
     print(f"Misses: {misses}")
     print(f"Hit Ratio: {hit_ratio:.2%}")
 
-
-# ---------------------------
-# USER INPUT SECTION
-# ---------------------------
 
 # Input memory block sequence
 blocks_input = input("Enter block sequence (comma-separated): ")

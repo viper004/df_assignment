@@ -7,6 +7,9 @@ Kanjirappally
 ## Programme
 **MCA 2025–27 (Semester 1)**  
 
+## Student Name
+JESTIN SHAJI 
+
 ## Course Codes
 - **24MCAT103 – Digital Fundamentals and Computer Architecture**
 - **24MCAT107 – Advanced Software Engineering**
